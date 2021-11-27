@@ -25,7 +25,7 @@ function App() {
       <Table currentPage={currentPage} data={tableData} setTableData={setTableData} setModalData={setModalData} setModalVisibility={setModalVisibility}/>
         <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} tableData={tableData} setTableData={setTableData}/>
       {/* </div> */}
-      {modalVisibility && <Modal setCurrentPage={setCurrentPage} modalData={modalData} setModalData={setModalData} setModalVisibility={setModalVisibility} setTableData={setTableData}/>}
+      {modalVisibility && <Modal setCurrentPage={setCurrentPage} tableData={tableData} modalData={modalData} setModalData={setModalData} setModalVisibility={setModalVisibility} setTableData={setTableData}/>}
     </div>
   );
 }

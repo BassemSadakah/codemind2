@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 
-function Modal({setModalVisibility,setTableData,modalData,setModalData}) {
+function Modal({tableData, setModalVisibility,setCurrentPage,setTableData,modalData,setModalData}) {
     let initData = { "year": ["", "", 4], "start_date": ["", "", 10], "end_date": ["", "", 10], "notes": ["", "", 0] }
     if(modalData){
         let index=0
@@ -20,7 +20,8 @@ function Modal({setModalVisibility,setTableData,modalData,setModalData}) {
             row.push(inputs[d][0])
         }
         setTableData(state=>[...state,row])
-        // let pages = Math.floor(tableData.length / 5) + 1
+        let pages = Math.floor(tableData.length / 5) + 1
+        setCurrentPage(pages)
         closeModal()
     }
       const validateForm = function(){
